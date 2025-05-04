@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ByNeX Import - Stylish & Trendy Fashion for Everyone.">
+    <meta name="keywords" content="Bluetooth, Baby, fashion, shoes, shop">
+    <meta name="Koffie Morrison" content="ByNeX Import">
+    <title>Shop | ByNeX Import</title>
+    <link rel="stylesheet" href="shop.css">
+    <!--! font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="loader-bg"></div>
+    <div class="loader">
+        <video autoplay muted loop playsinline webkit-playsinline>
+            <source src="images/loader.webm" type="video/webm">
+            <div class="fallback-text">Loading...</div>
+        </video>
+    </div>
+
+    <nav class="nav-links">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+        </div>
+
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="metro About.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="icons-sec">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-user"></i>
+            <a href="wishlist.html"><i class="fa-regular fa-heart"><span id="wishlist-count">1</span></i></a>
+            <i class="fa-solid fa-cart-shopping shop-cart"><span id="cart-count">2</span></i>
+            <h3>$<span id="cart-total"></span></h3>
+        </div>
+
+        <!-- Hamburger icon (visible on mobile) -->
+        <div class="bars" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <!-- Mobile Menu Container -->
+        <div class="mobile-menu">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="metro About.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="sidebar-cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+            <button class="view-cart-btn">View Cart</button>
+        </div>
+    </div>
+
+    <div class="shop-header">
+        <div class="header-content">
+            <h1>Shop Our Collection</h1>
+            <p>Discover the latest trends in footwear and fashion</p>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Shop</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="shop-container">
+        <aside class="shop-sidebar">
+            <div class="sidebar-section">
+                <h3>Categories</h3>
+                <ul class="category-list">
+                    <li><a href="#">All Products</a></li>
+                    <li><a href="#">Men's Footwear</a></li>
+                    <li><a href="#">Women's Footwear</a></li>
+                    <li><a href="#">Boots</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Men Two Piece</a></li>
+                    <li><a href="#">Women Two Piece</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Filter by Price</h3>
+                <div class="price-range">
+                    <label for="price-range">Price Range:</label>
+                    <input type="range" id="price-range" min="0" max="1000" step="10" value="1000" title="Adjust the price range">
+                    <button class="filter-btn">Apply</button>
+                    <!-- The price display will be inserted by JavaScript -->
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Size</h3>
+                <div class="size-options">
+                    <label><input type="checkbox" name="size" value="5"> 5</label>
+                    <label><input type="checkbox" name="size" value="6"> 6</label>
+                    <label><input type="checkbox" name="size" value="7"> 7</label>
+                    <label><input type="checkbox" name="size" value="8"> 8</label>
+                    <label><input type="checkbox" name="size" value="9"> 9</label>
+                    <label><input type="checkbox" name="size" value="10"> 10</label>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Color</h3>
+                <div class="color-options">
+                    <div class="color-box" data-color="red" style="background-color: red"></div>
+                    <div class="color-box" data-color="blue" style="background-color: blue"></div>
+                    <div class="color-box" data-color="green" style="background-color: green"></div>
+                    <div class="color-box" data-color="black" style="background-color: black"></div>
+                    <div class="color-box" data-color="white" style="background-color: white"></div>
+                    <div class="color-box" data-color="yellow" style="background-color: yellow"></div>
+                    <div class="color-box" data-color="pink" style="background-color: pink"></div>
+                    <!-- More colors... -->
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <button class="clear-filters-btn">Clear All Filters</button>
+                <h3>Brand</h3>
+                <div class="brand-options">
+                    <label><input type="checkbox" name="brand" value="nike"> Nike</label>
+                    <label><input type="checkbox" name="brand" value="adidas"> Adidas</label>
+                    <label><input type="checkbox" name="brand" value="puma"> Puma</label>
+                    <label><input type="checkbox" name="brand" value="timberland"> Timberland</label>
+                    <label><input type="checkbox" name="brand" value="clarks"> Clarks</label>
+                    <label><input type="checkbox" name="brand" value="reebok"> Reebok</label>
+                </div>
+            </div>
+        </aside>
+
+        <main class="shop-main">
+            <div class="shop-controls">
+                <div class="sort-options">
+                    <label for="sort">Sort by:</label>
+                    <select id="sort">
+                        <option value="default">Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name</option>
+                        <option value="popularity">Popularity</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+                <div class="view-options">
+                    <span class="grid-view active" data-view="grid"><i class="fas fa-th"></i></span>
+                    <span class="list-view" data-view="list"><i class="fas fa-list"></i></span>
+                </div>
+                <div class="product-count">
+                    Showing <span id="showing-count">0</span> of <span id="total-count">0</span> products
+                </div>
+
+            </div>
+
+            <div class="products-grid" id="products-container">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="prev">Previous</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#" class="next">Next</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="hero_footer">
+            <div class="address">
+                <img src="images/logo.jpg" alt="logo">
+                <h4>ByNex Import</h4>
+                <div class="info"><i class="fa-solid fa-location-dot"></i>
+                    <h3>Ghana,Greater Accra, Bortianor Hills</h3>
+                </div>
+                <div class="info"><i class="fa-solid fa-phone"></i>
+                    <h3>+233244492296</h3>
+                </div>
+                <div class="info"> <i class="fa-solid fa-envelope"></i>
+                    <h3>bynextimport@gmail.com </h3>
+                </div>
+            </div>
+            <div class="information">
+                <h1>information</h1>
+
+                <a href="#">about us</a>
+                <a href="#">latest post</a>
+                <a href="#">Selling Tips</a>
+                <a href="#">Advertising</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+            <div class="information">
+                <h1>My Account</h1>
+
+                <a href="#">My Account</a>
+                <a href="login.html">Login/Register</a>
+                <a href="#">Cart</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="#">Order History</a>
+
+            </div>
+            <div class="information">
+                <h1>Help an support</h1>
+
+                <a href="#">How to shop</a>
+                <a href="#">Payment</a>
+                <a href="#">Returns</a>
+                <a href="#">Delivery</a>
+                <a href="#">Privacy &amp; Cookie Policy</a>
+
+            </div>
+        </div>
+        <hr>
+        <div class="last-section">
+            <h3 class="copyright-text">© Copyright ByNeX Import. All rights reserved 2025. Designed and Developed by
+                Koffie Morrison</h3>
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-solid fa-wifi"></i>
+            </div>
+            <div class="payment-icons">
+                <img src="./images/payment1.png" alt="">
+                <img src="./images/payment2.png" alt="">
+                <img src="./images/momo-logo.webp" alt="">
+                <img src="./images/tigo.jpg" alt="">
+                <img src="./images/vodacash.jpg" alt="">
+            </div>
+        </div>
+    </footer>
+    <script src="products.js"></script>
+    <script src="shop.js"></script>
+    <script src="wishlist.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCartFromLocalStorage();
+            updateCartCount(); // optional, to update cart icon count
+            // Call renderCartItems() or renderCheckoutItems() here if needed
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Product Preview Modal -->
+<div class="product-preview-modal" id="product-preview-modal">
+    <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <div class="product-preview-container">
+            <div class="product-preview-images">
+                <div class="main-image">
+                    <img id="preview-main-image" src="" alt="">
+                    <!-- Navigation buttons will be added here by JavaScript -->
+                </div>
+                <div class="thumbnail-images" id="thumbnail-images">
+                    <!-- Thumbnails will be added dynamically -->
+                </div>
+            </div>
+            <div class="product-preview-details">
+                <h2 id="preview-product-name"></h2>
+                <div class="price" id="preview-product-price"></div>
+                <div class="description" id="preview-product-description"></div>
+                <div class="product-meta">
+                    <div class="category"><span>Category:</span> <span id="preview-product-category"></span></div>
+                    <div class="availability"><span>Availability:</span> <span id="preview-product-availability"></span></div>
+                </div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn decrease">-</button>
+                        <label for="quantity-input" class="visually-hidden">Quantity</label>
+                        <input type="number" id="quantity-input" value="1" min="1" class="quantity-input" title="Enter quantity" placeholder="Quantity">
+                        <button class="quantity-btn increase">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-wishlist-btn">
+                        <i class="far fa-heart"></i> Add to Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
