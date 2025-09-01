@@ -17,7 +17,7 @@
 <body>
     <div class="loader-bg"></div> 
 <div class="loader">
-    <video autoplay muted loop playsinline>
+    <video muted loop playsinline="" webkit-playsinline moz-playsinline>
         <source src="images/loader.webm" type="video/webm">
         <div class="fallback-text">Loading...</div>
     </video>
@@ -27,7 +27,6 @@
         <div class="logo">
             <img src="images/logo.jpg" alt="Logo">
         </div>
-    
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="shop.html">Shop</a></li>
@@ -35,7 +34,6 @@
             <li><a href="About.html">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-    
         <div class="icons-sec"> <!-- ✅ only one cart section here -->
             <i class="fa-solid fa-magnifying-glass"></i>
             <i class="fa-regular fa-user"></i>
@@ -44,7 +42,6 @@
             <i class="fa-solid fa-cart-shopping shop-cart"><span>2</span></i>
             <h3>$550.25</h3>
         </div>
-    
 <!-- Hamburger icon (visible on mobile) -->
 <div class="bars" id="menu-toggle">
     <i class="fas fa-bars"></i>
@@ -62,7 +59,6 @@
     </ul>
 </div>
     </nav>
-    
     <header class="header">
         <div class="hero-info">
             <div class="contain">
@@ -141,8 +137,9 @@
             <div class="affter-addcart-boxs">
                 <!--! cart box 1 -->
                 <div class="cart-box1">
-                    <button class="add-to-wishlist" data-id="1" data-product-id="1">
-                        <i class="far fa-heart"></i>
+                    <button class="add-to-wishlist" data-id="1" data-product-id="1" type="button" title="Add to Wishlist">
+                        <i class="far fa-heart" aria-hidden="true"></i>
+                        <span class="visually-hidden">Add to Wishlist</span>
                     </button>
                     <!-- <p>Add to Wishlistt</p> -->
                 </div>
@@ -168,9 +165,10 @@
             <div class="affter-addcart-boxs">
                 <!--! cart box 1 -->
                 <div class="cart-box1">
-                     <button class="add-to-wishlist" data-id="1" data-product-id="1">
-        <i class="far fa-heart"></i>
-      </button>
+                     <button class="add-to-wishlist" data-id="1" data-product-id="1" type="button" title="Add to Wishlist">
+        <i class="far fa-heart" aria-hidden="true"></i>
+        <span class="visually-hidden">Add to Wishlist</span>
+        </button>
                     <!-- <p>Add to Wishlistt</p> -->
                 </div>
                 <!--! cart box 2 -->
@@ -405,7 +403,7 @@
             <p>It only takes a second to be the first to find out about our latest news</p>
             <div class="email-submit-btn">
                 <input type="email" placeholder=" Youre Email Address">
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </div>
         </div>
     </div>
@@ -414,7 +412,7 @@
         <div class="hero_footer">
             <div class="address">
                 <img src="images/logo.jpg" alt="logo">
-                <h4>ByNex Import</h4>                          
+                <h4>ByNex Import</h4>
                 <div class="info"><i class="fa-solid fa-location-dot"></i>
                     <h3>Ghana,Greater Accra, Bortianor Hills</h3>
                 </div>
@@ -439,8 +437,8 @@
                 <h1>My Account</h1>
 
                 <a href="#">My Account</a>
-                <a href="#">Login/Register</a>
-                <a href="#">Cart</a>
+                <a href="login.html">Login/Register</a>
+                <a href="cart.html">Cart</a>
                 <a href="wishlist.html">Wishlist</a>
                 <a href="#">Order History</a>
 
@@ -483,20 +481,25 @@
             // Call renderCartItems() or renderCheckoutItems() here if needed
         });
     </script>
-    
     <script src="script.js"></script>
     <!-- Product Preview Modal -->
 <!-- Product Preview Modal -->
 <div class="modal" id="productPreviewModal">
     <div class="modal-content">
-        <button class="close-modal">&times;</button>
+        <button class="close-modal" type="button">&times;</button>
         <div class="quick-view-product">
             <div class="product-image">
-                <img id="previewProductImage" src="" alt="">
+                <img id="previewProductImage" src="images/default-product.jpg" alt="Product Preview">
                 <div class="image-gallery-controls">
-                    <button class="prev-image" title="Previous Image"><i class="fas fa-chevron-left"></i></button>
-                    <button class="next-image" title="Next Image"><i class="fas fa-chevron-right"></i></button>
-                    <button class="view-more-images">
+                    <button class="prev-image" type="button" title="Previous Image">
+                        <span class="visually-hidden">Previous Image</span>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="next-image" type="button" title="Next Image">
+                        <span class="visually-hidden">Next Image</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="view-more-images" type="button">
                         <i class="fas fa-images"></i> View More
                     </button>
                 </div>
@@ -505,7 +508,7 @@
                 </div>
             </div>
             <div class="product-details">
-                <h2 id="previewProductName"></h2>
+                <h2 id="previewProductName">Product Name</h2>
                 <div class="price-container">
                     <span id="previewProductPrice"></span>
                     <strike id="previewProductOldPrice"></strike>
@@ -513,10 +516,10 @@
                 </div>
                 <p id="previewProductDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <div class="product-actions">
-                    <button class="add-to-cart">
+                    <button class="add-to-cart" type="button">
                         <i class="fa-solid fa-cart-shopping"></i> Add to Cart
                     </button>
-                    <button class="add-to-wishlist">
+                    <button class="add-to-wishlist" type="button">
                         <i class="far fa-heart"></i> Wishlist
                     </button>
                 </div>
@@ -525,5 +528,4 @@
     </div>
 </div>
 </body>
-
 </html>
